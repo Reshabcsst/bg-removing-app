@@ -1,0 +1,37 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 5rem auto auto auto;
+  width: fit-content;
+  padding: 2rem;
+  background: rgba(245, 245, 245, 0.397);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.h1 {
+  font-size: 25px;
+}
+
+.input_file {
+  display: flex;
+
+}
+
+.info_text {
+  font-size: 18px;
+  color: white;
+}
+
+.preview_container {
+  width: 100%;
+}
