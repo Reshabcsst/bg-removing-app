@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import ReactCompareImage from 'react-compare-image';
+import Skeleton from './Skeleton';
 
 export default function RemoveBackground() {
     const [image, setImage] = useState(null);
@@ -37,7 +38,7 @@ export default function RemoveBackground() {
                     setLoading(false);
                 } catch (error) {
                     console.log(error);
-                    setLoading(false); 
+                    setLoading(false);
                 }
             }
         };
@@ -47,7 +48,7 @@ export default function RemoveBackground() {
 
     return (
         <div className="container">
-            <h1 >Image Background Remover</h1>
+            <h1 className='h1'>Image Background Remover</h1>
             <div className="input_file">
                 <label htmlFor="userImg" className="info_text">
                     Select a File
@@ -61,11 +62,13 @@ export default function RemoveBackground() {
                 />
             </div>
             <div className="preview_container">
-                {loading && <p>Loading...</p>}
+                {loading && <Skeleton />}
+
                 {!loading && image && bgRemove && (
                     <ReactCompareImage
                         leftImage={URL.createObjectURL(image)}
                         rightImage={bgRemove}
+                        skeleton={<Skeleton />}
                     />
                 )}
             </div>
