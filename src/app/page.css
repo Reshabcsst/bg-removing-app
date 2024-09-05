@@ -10,7 +10,7 @@
   margin: 5rem auto 3rem auto;
   width: fit-content;
   padding: 2rem;
-  background: rgba(245, 245, 245, 0.397);
+  background: rgb(255, 255, 255);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -20,16 +20,23 @@
 
 .h1 {
   font-size: 25px;
+  color: black;
+  font-weight: 600;
+}
+.h1 span{
+  background: -webkit-linear-gradient(320deg, #7C84F3, #FF4DD2, #FF993B, #FF4DD2, #7C84F3, #FF4DD2, #FF993B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .input_file {
   display: flex;
-
+  color: rgba(0, 0, 0, 0.685);
 }
 
 .info_text {
   font-size: 18px;
-  color: white;
+  color: rgba(0, 0, 0, 0.699);
 }
 
 .preview_container {
@@ -38,8 +45,8 @@
 
 .remove_bg_button .download_btn{
 padding: .3rem 1rem;
-color: rgb(0, 0, 0);
-background: rgb(247, 247, 247);
+color: rgb(255, 255, 255);
+background: #109cde;
 border-radius: 10px;
 font-weight: 600;
 cursor: pointer;
@@ -90,6 +97,5 @@ cursor: pointer;
   .info_text {
     font-size: 18px;
     display: inline;
-    color: white;
   }
 }

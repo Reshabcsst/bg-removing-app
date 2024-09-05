@@ -9,7 +9,14 @@ export default function RemoveBackground() {
     const [loading, setLoading] = useState(false);
 
     const FileChange = (e) => {
-        setImage(e.target.files[0]);
+        const selectedFile = e.target.files[0];
+
+        // Validate if the file is an image
+        if (selectedFile && selectedFile.type.startsWith('image/')) {
+            setImage(selectedFile);
+        } else {
+            alert('Please select a valid image file (PNG, JPG, etc.)');
+        }
     };
 
     useEffect(() => {
@@ -48,7 +55,7 @@ export default function RemoveBackground() {
 
     return (
         <div className="container">
-            <h1 className='h1'>Image Background Remover</h1>
+            <h1 className='h1'><span>Remove background</span> images for free.</h1>
             <div className="input_file">
                 <label htmlFor="userImg" className="info_text">
                     Select a File
@@ -58,12 +65,12 @@ export default function RemoveBackground() {
                     id="userImg"
                     className="form_control_file"
                     onChange={FileChange}
+                    accept="image/*"
                     required
                 />
             </div>
             <div className="preview_container">
                 {loading && <Skeleton />}
-
                 {!loading && image && bgRemove && (
                     <ReactCompareImage
                         leftImage={URL.createObjectURL(image)}
